@@ -1,0 +1,21 @@
+.shoppingCart {
+  height: 500px;
+  width: 20rem;
+  margin-top: -15px;
+  background-color: whitesmoke;
+  color: rgb(58, 57, 57);
+  position: absolute;
+  right: 0;
+  margin-right: 8px;
+}
+
+.shoppingCart__title {
+  height: 43px;
+  border-bottom-style: ridge;
+  border-top-style: ridge;
+  font-size: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px 10px 0px;
+}

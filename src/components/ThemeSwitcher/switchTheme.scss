@@ -1,0 +1,60 @@
+.themeSection {
+  height: 70px;
+  width: 7rem;
+  margin-top: 45px;
+  margin-left: -3.5rem;
+  font-size: 1rem;
+  position: absolute;
+  z-index: 1;
+  color: black;
+  p {
+    font-size: 0.9rem;
+  }
+}
+
+.themeSection__colorSelection {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  text-align: center;
+  padding: 0px;
+}
+
+.themeSection__purple {
+  background-color: purple;
+  height: 30px;
+  width: 30px;
+  margin-right: 10px;
+  padding: 2px;
+  text-align: bottom;
+}
+
+.themeSection__blue {
+  background-color: blue;
+  height: 30px;
+  width: 30px;
+  margin-right: 10px;
+  padding: 2px;
+}
+.themeSection__green {
+  background-color: green;
+  height: 30px;
+  width: 30px;
+  margin-right: 10px;
+  padding: 2px;
+}
+
+.themeSection__red {
+  background-color: red;
+  height: 30px;
+  width: 30px;
+  margin-right: 10px;
+  padding: 2px;
+}
+hr {
+  margin-top: -15px;
+}
+p {
+  text-align: center;
+  margin-top: 8px;
+}
