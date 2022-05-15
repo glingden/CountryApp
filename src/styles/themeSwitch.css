@@ -1,0 +1,65 @@
+.themeSection {
+  height: 20px;
+  width: 90px;
+  margin-top: 15px;
+  margin-left: 2rem;
+  font-size: 1rem;
+  position: absolute;
+  z-index: 1;
+  color: black;
+}
+p {
+  font-size: 0.9rem;
+}
+
+.themeSection__colorSelection {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  text-align: center;
+  padding: 0px;
+  cursor: pointer;
+}
+
+.themeSection__purple {
+  background-color: purple;
+  height: 30px;
+  width: 30px;
+  margin-right: 12px;
+  padding-top: 2px;
+  text-align: bottom;
+  cursor: pointer;
+}
+
+.themeSection__blue {
+  background-color: #0277ee;
+  height: 30px;
+  width: 30px;
+  margin-right: 12px;
+  padding: 2px;
+  cursor: pointer;
+}
+.themeSection__green {
+  background-color: #26a65b;
+  height: 30px;
+  width: 30px;
+  margin-right: 12px;
+  padding: 2px;
+  cursor: pointer;
+}
+
+.themeSection__red {
+  background-color: #eb4034;
+  height: 30px;
+  width: 30px;
+  margin-right: 12px;
+  padding: 2px;
+  cursor: pointer;
+}
+hr {
+  margin-top: -15px;
+}
+p {
+  text-align: center;
+  margin-top: 8px;
+}
