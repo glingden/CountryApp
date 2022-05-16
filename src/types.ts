@@ -1,61 +1,79 @@
 // Action types
-export const ADD_PRODUCT = 'ADD_PRODUCT'
-export const REMOVE_PRODUCT = 'REMOVE_PRODUCT'
-export const TOGGLE_DIALOG = 'TOGGLE_DIALOG'
+export const LOAD_COUNTRY_REQUEST = 'LOAD_TODOS_REQUEST'
+export const LOAD_COUNTRY_SUCCESS = 'LOAD_TODOS_SUCCESS'
+export const LOAD_COUNTRY_FAILURE = 'LOAD_TODOS_FAILURE'
+export const ADD_COUNTRIES_CART = 'ADD_COUNTRIES'
+export const REMOVE_COUNTRIES_CART = 'REMOVE_COUNTRIES'
 
-// Enum
-export enum DialogType {
-  SignIn = 'signIn',
-  SignUp = 'signUp',
-}
-
-// A product
-export type Product = {
+// Countries Data type
+export type CountryType = {
   id: string
   name: string
-  price: number
+  flags: string
+  region: string
+  languages: string
+  population: number
+  borders: string[]
 }
 
-export type AddProductAction = {
-  type: typeof ADD_PRODUCT
+export type CountryPropsType = {
+  countryProps: CountryType[]
+}
+// Data Fetch Action Types
+export type FetchAllCountriesRequestAction = {
+  type: typeof LOAD_COUNTRY_REQUEST
+}
+
+export type FetchAllCountriesSuceessAction = {
+  type: typeof LOAD_COUNTRY_SUCCESS
+  payload: CountryType[]
+}
+
+export type FetchAllCountriesFailureAction = {
+  type: typeof LOAD_COUNTRY_FAILURE
   payload: {
-    product: Product,
+    msg: string
   }
 }
 
-export type RemoveProductAction = {
-  type: typeof REMOVE_PRODUCT
+// InCart Add Action Types
+export type AddCountryAction = {
+  type: typeof ADD_COUNTRIES_CART
   payload: {
-    product: Product,
+    country: CountryType
   }
 }
 
-export type ToggleDialogAction = {
-  type: typeof TOGGLE_DIALOG
+// InCart Remove Action Types
+export type RemoveCountryAction = {
+  type: typeof REMOVE_COUNTRIES_CART
   payload: {
-    dialog: DialogType,
+    country: CountryType
   }
 }
 
-export type UiActions = ToggleDialogAction
+// Use All actions as  union in reducer
+export type CountryAllActions =
+  | AddCountryAction
+  | RemoveCountryAction
+  | FetchAllCountriesRequestAction
+  | FetchAllCountriesSuceessAction
+  | FetchAllCountriesFailureAction
 
-// Use this union in reducer
-export type ProductActions =
-  | AddProductAction
-  | RemoveProductAction
-
-export type ProductState = {
-  inCart: Product[]
+// Country Payload types
+export type CountryState = {
+  countryData: CountryType[]
+  loading: boolean
+  error: string
 }
 
-// Using dynamic keys from an enum
-export type UiState = {
-  dialogOpen: {
-    [key in DialogType]?: boolean
-  }
+// Country Card Payload types
+export type CartState = {
+  cartData: CountryType[]
 }
 
+//App State
 export type AppState = {
-  product: ProductState,
-  ui: UiState,
+  country: CountryState
+  cart: CartState
 }

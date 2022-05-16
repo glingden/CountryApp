@@ -1,51 +1,32 @@
-import React, { createContext, useContext, useState } from 'react'
-// import { useDispatch, useSelector } from 'react-redux'
-// import { Link } from 'react-router-dom'
-import HearderComponent from '../components/HeaderComponent/HeaderComponent'
+import React, { useState } from 'react'
 
-// import { Product, AppState } from '../types'
-// import { addProduct, removeProduct } from '../redux/actions'
-// import product from '../redux/reducers/product'
+import HeaderBar from '../components/HeaderBar'
 import ThemeContext from '../context/ThemeContext'
-
-// const names = ['Apple', 'Orange', 'Avocado', 'Banana', 'Cucumber', 'Carrot']
+import useCountry from '../hook/useCountry'
+import TableComponent from '../components/TableComponent'
 
 export default function Home() {
-  // const dispatch = useDispatch()
-  // const products = useSelector((state: AppState) => state.product.inCart)
-
-  // const handleAddProduct = () => {
-  //   const product: Product = {
-  //     id: (+new Date()).toString(),
-  //     name: names[Math.floor(Math.random() * names.length)],
-  //     price: +(Math.random() * 10).toFixed(2),
-  //   }
-  //   dispatch(addProduct(product))
-  // }
-
   // Define theme state
-  const [theme, setTheme] = useState('')
+  const [themeValue, setTheme] = useState('purple')
+  // Fetch data using hook
+  const dataCountry = useCountry()
+  const [search, setSearch] = useState('')
+
+  // Filter based on searched country
+  const filteredCountry = dataCountry.filter((country) =>
+    country.name.toLowerCase().includes(search.toLowerCase())
+  )
+
+  const querySearchHandle = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSearch(event.target.value)
+  }
 
   return (
     <>
-      <ThemeContext.Provider value={{ theme, setTheme }}>
-        <HearderComponent />
+      <ThemeContext.Provider value={{ themeValue, setTheme }}>
+        <HeaderBar search={search} onChange={querySearchHandle} />
+        <TableComponent countryProps={filteredCountry} />
       </ThemeContext.Provider>
-
-      {/* <h1 style={{ margin: '200px' }}>Home page</h1>
-
-      {products.length <= 0 && <div>No products in cart</div>}
-
-      <ul>
-        {products.map((p) => (
-          <li key={p.id}>
-            <Link to={`/products/${p.id}`}>{`${p.name} - $${p.price}`}</Link>
-            <button onClick={() => dispatch(removeProduct(p))}>Remove</button>
-          </li>
-        ))}
-      </ul>
-      <div>Total: {products.length}</div>
-      <button onClick={handleAddProduct}>Add product</button> */}
     </>
   )
 }

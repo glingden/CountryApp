@@ -5,12 +5,12 @@ import { BrowserRouter as Router } from 'react-router-dom'
 
 import App from './App'
 import * as serviceWorker from './serviceWorker'
-import makeStore from './redux/store'
+import store from './redux/store'
 
-const store = makeStore()
+import '../src/styles/index.scss'
 
 const WithProvider = () => (
-  <Provider store={store}>
+  <Provider store={store()}>
     <Router>
       <App />
     </Router>

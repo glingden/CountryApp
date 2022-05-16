@@ -1,10 +1,11 @@
 import React from 'react'
 
 interface ThemeInterface {
-  theme: string
-  setTheme: any
+  themeValue: string
+  setTheme: React.Dispatch<React.SetStateAction<string>>
 }
 
 //create context
 const ThemeContext = React.createContext({} as ThemeInterface)
+
 export default ThemeContext
