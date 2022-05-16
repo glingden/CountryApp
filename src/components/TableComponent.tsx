@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import Backdrop from '@mui/material/Backdrop'
 import CircularProgress from '@mui/material/CircularProgress'
 
-import ThemeContext from '../context/ThemeContext'
+import { ThemeContext } from '../context/ThemeContext'
 import { sortByPopulation, sortByCountry } from '../utils/Sorting'
 import { addCountry } from '../redux/actions/cart'
 

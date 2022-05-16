@@ -9,7 +9,7 @@ import DeleteIcon from '@material-ui/icons/Delete'
 import IconButton from '@mui/material/IconButton'
 import Typography from '@mui/material/Typography'
 
-import ThemeContext from '../context/ThemeContext'
+import { ThemeContext } from '../context/ThemeContext'
 import { removeCountry } from '../redux/actions/cart'
 import { AppState } from '../types'
 

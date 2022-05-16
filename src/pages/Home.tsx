@@ -1,13 +1,10 @@
 import React, { useState } from 'react'
 
 import HeaderBar from '../components/HeaderBar'
-import ThemeContext from '../context/ThemeContext'
 import useCountry from '../hook/useCountry'
 import TableComponent from '../components/TableComponent'
 
 export default function Home() {
-  // Define theme state
-  const [themeValue, setTheme] = useState('purple')
   // Fetch data using hook
   const dataCountry = useCountry()
   const [search, setSearch] = useState('')
@@ -23,10 +20,8 @@ export default function Home() {
 
   return (
     <>
-      <ThemeContext.Provider value={{ themeValue, setTheme }}>
-        <HeaderBar search={search} onChange={querySearchHandle} />
-        <TableComponent countryProps={filteredCountry} />
-      </ThemeContext.Provider>
+      <HeaderBar search={search} onChange={querySearchHandle} />
+      <TableComponent countryProps={filteredCountry} />
     </>
   )
 }

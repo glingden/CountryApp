@@ -17,7 +17,7 @@ import MenuIcon from '@material-ui/icons/Menu'
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart'
 
 import SwithchTheme from './ThemeSwitch'
-import ThemeContext from '../context/ThemeContext'
+import { ThemeContext } from '../context/ThemeContext'
 import { AppState } from '../types'
 import CountryCart from '../components/Cart'
 

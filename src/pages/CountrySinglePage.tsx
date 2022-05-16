@@ -9,7 +9,7 @@ import {
   Typography,
 } from '@mui/material'
 
-import ThemeContext from '../context/ThemeContext'
+import { ThemeContext } from '../context/ThemeContext'
 import useCountry from '../hook/useCountry'
 
 type Params = {
@@ -17,7 +17,6 @@ type Params = {
 }
 const SingleCountry = () => {
   const { themeValue } = React.useContext(ThemeContext)
-  // console.log('tehem;', themeValue)
   const { countryName } = useParams<Params>()
   const history = useHistory()
   const singleCountry = useCountry(countryName)
@@ -35,6 +34,7 @@ const SingleCountry = () => {
             style={{
               textAlign: 'center',
               marginTop: '25px',
+              color: themeValue,
             }}
           >
             Country Information
