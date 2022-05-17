@@ -83,7 +83,7 @@ export default function BasicTable({
   if (error) return <p>{error}</p>
 
   return (
-    <Paper sx={{ width: '100%', overflow: 'hidden' }}>
+    <Paper sx={{ width: '100%', overflow: 'visible', color: 'black' }}>
       <TableContainer sx={{ maxHeight: 500 }}>
         <Table
           stickyHeader
@@ -193,11 +193,12 @@ export default function BasicTable({
         {/* --- Table Pagination Start here ---- */}
       </TableContainer>
       <TablePagination
-        style={{
+        sx={{
           display: 'flex',
           justifyContent: 'center',
           height: '10vh',
           background: '#f2f2f2',
+          color: 'black',
         }}
         component="div"
         rowsPerPageOptions={[5, 10, 50]}

@@ -5,12 +5,11 @@ type ThemeType = {
   setTheme: React.Dispatch<React.SetStateAction<string>>
 }
 
-//create context
+//Create Theme Context
 export const ThemeContext = React.createContext({} as ThemeType)
 
-// export default ThemeContext
-
-export const ThemeProvider: React.FunctionComponent = ({ children }) => {
+// ThemeContext
+const ThemeProvider: React.FunctionComponent = ({ children }) => {
   const [themeValue, setTheme] = React.useState('purple')
   return (
     <ThemeContext.Provider value={{ themeValue, setTheme }}>

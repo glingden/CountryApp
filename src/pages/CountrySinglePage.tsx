@@ -15,6 +15,7 @@ import useCountry from '../hook/useCountry'
 type Params = {
   countryName: string
 }
+
 const SingleCountry = () => {
   const { themeValue } = React.useContext(ThemeContext)
   const { countryName } = useParams<Params>()
