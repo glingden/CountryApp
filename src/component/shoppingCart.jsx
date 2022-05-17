@@ -9,7 +9,7 @@ import DeleteIcon from '@material-ui/icons/Delete'
 import IconButton from '@mui/material/IconButton'
 import Typography from '@mui/material/Typography'
 
-import ThemeContext from '../context/Context'
+import { ThemeContext } from '../context/Context'
 
 export default function ShoppingCart() {
   const { themeValue } = React.useContext(ThemeContext)

@@ -1,18 +1,17 @@
 import * as React from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
-import useCountry from '../hook/useCountry'
-
-import { makeStyles } from '@mui/styles'
+import { makeStyles, createStyles } from '@mui/styles'
 import {
-  Grid,
-  createStyles,
   Button,
   Card,
   CardContent,
   CardActions,
   Typography,
+  Box,
 } from '@mui/material'
-import ThemeContext from '../context/Context'
+
+import useCountry from '../hook/useCountry'
+import { ThemeContext } from '../context/Context'
 
 const useStyles = makeStyles((theme) =>
   createStyles({
@@ -30,14 +29,15 @@ const SingleCountry = () => {
   const navigate = useNavigate()
   const styles = useStyles()
   const singleCountry = useCountry(countryName)
+  // console.log('single:', singleCountry)
 
   return (
     <>
       {singleCountry.length !== 0 && (
-        <Grid
+        <Box
           container
           justifyContent="center"
-          sx={{ backgroundColor: themeValue, color: 'white' }}
+          sx={{ backgroundColor: themeValue, color: 'white', pt: 5 }}
         >
           <Typography
             variant="h5"
@@ -100,7 +100,7 @@ const SingleCountry = () => {
               </Button>
             </CardActions>
           </Card>
-        </Grid>
+        </Box>
       )}
     </>
   )

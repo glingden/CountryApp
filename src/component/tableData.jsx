@@ -2,7 +2,7 @@ import * as React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 
-import ThemeContext from '../context/Context'
+import { ThemeContext } from '../context/Context'
 import { addCountry } from '../redux/actions/'
 import { sortByPopulation, sortByCountry } from '../utils/sorting'
 import Backdrop from '@mui/material/Backdrop'
@@ -31,11 +31,6 @@ export default function BasicTable({ props }) {
   const { themeValue } = React.useContext(ThemeContext)
   const { cart } = useSelector((state) => state.carts)
   const dispatch = useDispatch()
-
-  // console.log(cart)
-  // console.log(orderDirection1)
-  // console.log('before sort:', props)
-  // console.log('after sort:', rowData)
 
   // Handle Sorting by population when click
   const handleSortRequestPop = () => {
@@ -80,7 +75,7 @@ export default function BasicTable({ props }) {
   if (error) return { error }
 
   return (
-    <Paper sx={{ width: '100%', overflow: 'hidden' }}>
+    <Paper sx={{ width: '100%', overflow: 'hidden', color: 'black' }}>
       <TableContainer sx={{ maxHeight: 500 }}>
         <Table
           stickyHeader
@@ -193,7 +188,7 @@ export default function BasicTable({ props }) {
 
             {/* --- Maintain space in empty rows ---- */}
             {emptyRows > 0 && (
-              <TableRow style={{ height: 40 * emptyRows }}>
+              <TableRow style={{ height: 90 * emptyRows }}>
                 <TableCell colSpan={5}></TableCell>
               </TableRow>
             )}
@@ -203,11 +198,12 @@ export default function BasicTable({ props }) {
         {/* --- Table Pagination Start here ---- */}
       </TableContainer>
       <TablePagination
-        style={{
+        sx={{
           display: 'flex',
           justifyContent: 'center',
-          height: '8vh',
+          height: '10vh',
           background: '#f2f2f2',
+          color: 'black',
         }}
         component="div"
         rowsPerPageOptions={[5, 10, 20, 50]}

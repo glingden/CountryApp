@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
 import TableData from '../component/tableData'
-import Header from '../component/appBar'
+import Header from '../component/appHeader'
 import useCountry from '../hook/useCountry'
 
 export default function Home() {
