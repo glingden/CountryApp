@@ -3,7 +3,7 @@ import {
   LOAD_COUNTRY_REQUEST,
   LOAD_COUNTRY_FAILURE,
   LOAD_COUNTRY_SUCCESS,
-} from '../types'
+} from '../../types'
 
 // Error Action
 export function loadCountryRequest() {

@@ -1,4 +1,4 @@
-import { ADD_COUNTRIES_CART, REMOVE_COUNTRIES_CART } from '../types'
+import { ADD_COUNTRIES_CART, REMOVE_COUNTRIES_CART } from '../../types'
 
 export function addCountry(payload) {
   return {
