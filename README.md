@@ -3,6 +3,8 @@ This web app provides you World Countries' information such as population, lanug
 
 
 ## Running App 
+<b>Pre-requisite:- </b>
+Node.js v14.19.1
 
 1. Download the project either by clicking directly download option or git using following command:
 ```
