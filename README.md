@@ -6,7 +6,7 @@ This web app provides you World Countries' information such as population, lanug
 
 1. Download the project either by clicking directly download option or git using following command:
 ```
-$ git clone https://github.com/glingden/CountryApp.git
+$ git clone https://github.com/glingden/CountryApp.git typescript
 ```
 
 2. Navigate project folder and install required depedencies using following command:
