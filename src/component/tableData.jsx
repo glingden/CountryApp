@@ -34,7 +34,7 @@ export default function BasicTable({ props }) {
 
   // Handle Sorting by population when click
   const handleSortRequestPop = () => {
-    setRowData(sortByPopulation(props, orderDirection))
+    setRowData(sortByPopulation(rowData, orderDirection))
     setOrderDirection(orderDirection === 'asc' ? 'desc' : 'asc')
     setOrderDirection1('asc')
   }
