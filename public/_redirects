@@ -1,3 +1,4 @@
 # Redirects from what the browser requests to what we serve
-/home              https://graceful-biscotti-0acdbe.netlify.app/
+#/home              https://graceful-biscotti-0acdbe.netlify.app/
+/*    /index.html   200
 
