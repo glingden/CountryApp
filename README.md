@@ -1,6 +1,6 @@
 # Country Web App 
 This web app provides you World Countries' information such as population, lanugages, borders, etc. In addition, 4 different colors of choice are available in the app.  This app is developed using React.js, React hooks, Redux and Material UI. <br><br> App is live at
-https://graceful-biscotti-0acdbe.netlify.app/
+https://worldcountry.netlify.app/
 
 
 ## Running App 
